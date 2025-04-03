@@ -11,3 +11,7 @@ Lijn tussen linkse en rechtse deel achtergrond: #E5E5E5
 Tekst attractiekaartje: #0B351D
 Tekst attractiekaartje, themagebied + lengte: #849D8E
 Knop achtergrondkleur: #3ED67D
+
+100-400 → Lichtere tinten
+500 → Standaardkleur
+600-900 → Donkerdere tinten

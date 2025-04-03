@@ -1,0 +1,155 @@
+:root {
+    --card-bg: #F5FCF8;
+    --card-btn-bg: #3ED67D;
+    --card-primary-600: #0B351D;
+    --card-primary-500: #849D8E;
+    --special-font: 'Oxanium';
+    --font-weight-light: 300;
+    --font-weight-reqular: 400;
+    --font-weight-bold: 700;
+    --special-font-weight-SemiBold: 600;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.card .card-info {
+    height: 50%;
+}
+
+.card-info .min-lenght,
+.card-info .description {
+    color: var(--card-primary-500);
+}
+
+.card-info .theme,
+.card-info .title {
+    color: var(--card-primary-600);
+    font-family: var(--special-font), cursive !important;
+    font-weight: var(--special-font-weight-SemiBold);
+    margin: 0;
+}
+
+.card-info .theme {
+    font-size: .8rem;
+}
+
+.card-info .title {
+    font-size: 2rem;
+}
+
+.card-info .min-lenght {
+    font-weight: var(--font-weight-light);
+}
+
+.card-info .min-lenght span {
+    font-weight: var(--font-weight-bold);
+}
+
+.card img {
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 50%;
+}
+
+/* Small card */
+.card-s {
+    grid-column: span 1;
+    max-width: 15vw;
+}
+
+.card-s .card-info {
+    background-color: var(--card-bg);
+}
+
+.card-s .card-info {
+    padding: 2rem;
+}
+
+/* Large card verbeterd */
+.card-l {
+    grid-column: span 2;
+}
+
+.card-l .card-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-l .fastpass {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.card-l .fastpass .info {
+    background-color: white;
+}
+
+.card-l .info {
+    width: 50%;
+    padding: 2rem;
+    background-color: var(--card-bg);
+}
+
+.fastpass .info p {
+    font-size: 0.9rem;
+    color: var(--card-primary-500);
+    text-align: center;
+}
+
+.fastpass .fast-pass {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.fastpass .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--card-btn-bg);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.fastpass .btn:hover {
+    background-color: #34c16c;
+}
+
+.fastpass .btn img {
+    height: 1.5rem;
+    border-radius: 0;;
+}
+
+.fastpass .btn p {
+    font-size: 1.8rem;
+    font-family: var(--special-font), cursive;
+    color: var(--card-primary-600);
+    font-weight: var(--special-font-weight-SemiBold);
+    margin: 0;
+}
