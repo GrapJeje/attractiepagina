@@ -3,153 +3,194 @@
     --card-btn-bg: #3ED67D;
     --card-primary-600: #0B351D;
     --card-primary-500: #849D8E;
-    --special-font: 'Oxanium';
+    --special-font: 'Oxanium', sans-serif;
     --font-weight-light: 300;
-    --font-weight-reqular: 400;
+    --font-weight-regular: 400;
     --font-weight-bold: 700;
-    --special-font-weight-SemiBold: 600;
+    --special-font-weight-semi-bold: 600;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --card-border-radius: 20px;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
 }
 
+.container {
+    padding-bottom: 100px;
+}
+
 .card-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    grid-auto-flow: dense;
+    grid-auto-rows: minmax(auto, 400px);
 }
 
 .card {
-    box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border-radius: 20px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
 }
 
-.card .card-info {
-    height: 50%;
+.card:hover {
+    box-shadow: 0 8px 16px -1px rgba(0, 0, 0, 0.2), 0 4px 8px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
-.card-info .min-lenght,
+.card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info .min-length,
 .card-info .description {
     color: var(--card-primary-500);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
 }
 
 .card-info .theme,
 .card-info .title {
     color: var(--card-primary-600);
-    font-family: var(--special-font), cursive !important;
-    font-weight: var(--special-font-weight-SemiBold);
+    font-family: var(--special-font);
     margin: 0;
 }
 
 .card-info .theme {
-    font-size: .8rem;
+    font-size: 0.8rem;
+    font-weight: var(--special-font-weight-semi-bold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
 }
 
 .card-info .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: var(--special-font-weight-semi-bold);
+    margin-bottom: 0.5rem;
 }
 
-.card-info .min-lenght {
+.card-info .min-length {
     font-weight: var(--font-weight-light);
 }
 
-.card-info .min-lenght span {
+.card-info .min-length span {
     font-weight: var(--font-weight-bold);
 }
 
 .card img {
+    width: 100%;
+    height: 160px;
     object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 50%;
+    object-position: center;
 }
 
 /* Small card */
 .card-s {
     grid-column: span 1;
-    max-width: 15vw;
 }
 
 .card-s .card-info {
     background-color: var(--card-bg);
+    padding: 1.2rem;
 }
 
-.card-s .card-info {
-    padding: 2rem;
-}
-
-/* Large card verbeterd */
+/* Large card */
 .card-l {
     grid-column: span 2;
+    height: 100%;
 }
 
 .card-l .card-info {
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    min-height: 100%;
+}
+
+.card-l .info {
+    width: 50%;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    display: flex;
+    flex-direction: column;
 }
 
 .card-l .fastpass {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 1.5rem;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    background-color: white;
+    border-left: 1px solid #e0e0e0;
 }
 
 .card-l .fastpass .info {
-    background-color: white;
+    background-color: inherit;
+    width: 80%;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-.card-l .info {
-    width: 50%;
-    padding: 2rem;
-    background-color: var(--card-bg);
-}
-
-.fastpass .info p {
+.card-l .fastpass .info p {
     font-size: 0.9rem;
     color: var(--card-primary-500);
     text-align: center;
 }
 
-.fastpass .fast-pass {
-    font-size: 1rem;
+.card-l .fastpass .fast-pass {
     text-align: center;
-    margin-top: 1rem;
 }
 
-.fastpass .btn {
-    display: flex;
+.card-l .fastpass .fast-pass p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--card-primary-500);
+}
+
+.card-l .fastpass .btn {
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.8rem;
     background-color: var(--card-btn-bg);
-    padding: 1rem 2rem;
-    border-radius: 8px;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    border: none;
+    width: auto;
 }
 
-.fastpass .btn:hover {
-    background-color: #34c16c;
-}
-
-.fastpass .btn img {
-    height: 1.5rem;
-    border-radius: 0;;
-}
-
-.fastpass .btn p {
+.card-l .fastpass .btn span {
     font-size: 1.8rem;
-    font-family: var(--special-font), cursive;
-    color: var(--card-primary-600);
-    font-weight: var(--special-font-weight-SemiBold);
+    font-family: var(--special-font);
+    font-weight: var(--special-font-weight-semi-bold);
+    color: black !important;
+}
+
+.card-l .fastpass .btn:hover {
+    background-color: #2eae5f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-l .fastpass .btn img {
+    height: 1.2rem;
+    width: auto;
+}
+
+.card-l .fastpass .btn p {
+    font-size: 1.2rem;
+    font-family: var(--special-font);
+    font-weight: var(--special-font-weight-semi-bold);
     margin: 0;
+    color: white !important;
 }
